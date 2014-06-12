@@ -1,0 +1,69 @@
+	
+
+		Mandatory Attributes of an Order
+
+Attributes 
+Type
+currency 
+Currency 
+date 
+java.util.Date
+net 
+java.lang.Boolean
+user 
+User
+discountsIncludeDeliveryCost 
+java.lang.Boolean
+discountsIncludePaymentCost 
+java.lang.Boolean 
+
+
+INSERT_UPDATE Order;code[unique=true];user(name);currency(isocode);date[dateformat=dd-MM-yyyy hh:mm:ss] ;discountsIncludeDeliveryCost; discountsIncludePaymentCost;
+
+;SAPOrder;Zohan;USD;12-06-2014 5:45:00;true;false;
+;ERPOrder;Guest;USD;13-06-2014 9:15:00;false;true;
+
+
+select name,code from {user},{order} where (pk=userpk) 
+
+
+NAME
+CODE
+Zohan
+zohan-00-1
+Zohan
+ser
+Zohan
+SapOrder
+Zohan
+SAPorder
+Zohan
+SAPOrder
+
+
+select code as OrderStatus from {orderstatus},{order} where (pk=statuspk) 
+
+ORDERSTATUS
+COMPLETED
+COMPLETED
+COMPLETED
+CREATED
+CREATED
+CREATED
+CREATED
+CREATED
+CREATED
+CREATED
+
+
+
+INSERT_UPDATE Order;code[unique=true];user(name);currency(isocode);date[dateformat=dd-MM-yyyy hh:mm:ss] ;discountsIncludeDeliveryCost; discountsIncludePaymentCost;status;
+
+;98405;Toby;USD;12-06-2014 5:45:00;true;false;8796101115995
+;20478;Serene Rakesh;USD;13-06-2014 9:15:00;false;true;8796101115995
+
+select code from {orderstatus} where (pk=8796101115995)
+
+
+CODE
+COMPLETED
