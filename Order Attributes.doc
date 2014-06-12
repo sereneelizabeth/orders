@@ -57,13 +57,19 @@ CREATED
 
 
 
-INSERT_UPDATE Order;code[unique=true];user(name);currency(isocode);date[dateformat=dd-MM-yyyy hh:mm:ss] ;discountsIncludeDeliveryCost; discountsIncludePaymentCost;status;
+INSERT_UPDATE Order;code[unique=true];user(name);currency(isocode);date[dateformat=dd-MM-yyyy hh:mm:ss] ;discountsIncludeDeliveryCost; discountsIncludePaymentCost;status(code);
 
-;98405;Toby;USD;12-06-2014 5:45:00;true;false;8796101115995
-;20478;Serene Rakesh;USD;13-06-2014 9:15:00;false;true;8796101115995
+;98405;Toby;USD;12-06-2014 5:45:00;true;false;CREATED
+;20478;Serene Rakesh;USD;13-06-2014 9:15:00;false;true;CANCELLED
 
 select code from {orderstatus} where (pk=8796101115995)
 
 
 CODE
 COMPLETED
+
+
+INSERT_UPDATE Order;code[unique=true];user(name);currency(isocode);date[dateformat=dd-MM-yyyy hh:mm:ss] ;discountsIncludeDeliveryCost; discountsIncludePaymentCost;status(code);
+
+;90708;Thomas;USD;12-06-2014 5:45:00;true;false;CREATED
+;20478;Serene Rakesh;USD;13-06-2014 9:15:00;false;true;CANCELLED
